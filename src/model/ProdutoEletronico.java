@@ -2,12 +2,12 @@ package model;
 
 public class ProdutoEletronico extends Produto {
 	private String marca;
-	private String voltagem;
+	private String modelo;
 
-	public ProdutoEletronico(int id, String nome, double preco, int quantidadeEstoque, String marca, String voltagem) {
-		super(id, nome, preco, quantidadeEstoque);
+	public ProdutoEletronico(int id, String nome, float preco, String marca, String modelo) {
+		super(id, nome, preco);
 		this.marca = marca;
-		this.voltagem = voltagem;
+		this.modelo = modelo;
 	}
 
 	public String getMarca() {
@@ -18,16 +18,16 @@ public class ProdutoEletronico extends Produto {
 		this.marca = marca;
 	}
 
-	public String getVoltagem() {
-		return voltagem;
+	public String getModelo() {
+		return modelo;
 	}
 
-	public void setVoltagem(String voltagem) {
-		this.voltagem = voltagem;
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + ", marca='" + marca + "', voltagem='" + voltagem + "'";
+		return super.toString() + ", marca=" + marca + ", modelo=" + modelo;
 	}
 }
