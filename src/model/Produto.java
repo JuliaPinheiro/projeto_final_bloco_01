@@ -38,6 +38,11 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto id=" + id + ", nome=" + nome + ", preco=" + preco + ", quantidadeEstoque= ";
+		return "\n*****************************************\n" + "                Produto\n"
+				+ "*****************************************\n" + " ID:                " + id + "\n"
+				+ " Nome:              " + nome + "\n" + " Preço:             R$ " + String.format("%.2f", preco) + "\n"
+				+
+
+				"*****************************************\n";
 	}
 }

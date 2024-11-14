@@ -9,21 +9,25 @@ public class ProdutoRepositoryImpl implements ProdutoRepository {
 
 	@Override
 	public void cadastrar(Produto produto) {
-		boolean produtoExistente = produtos.stream().anyMatch(p -> p.getId() == produto.getId());
+		try {
+			boolean produtoExistente = produtos.stream().anyMatch(p -> p.getId() == produto.getId());
 
-		if (produtoExistente) {
-			System.err.println("Erro: Produto com o ID " + produto.getId() + " já está cadastrado.");
-			return;
+			if (produtoExistente) {
+				System.err.println("Erro: Produto com o ID " + produto.getId() + " já está cadastrado.");
+				return;
+			}
+
+			produtos.add(produto);
+			System.out.println("Produto cadastrado com sucesso!");
+		} catch (Exception e) {
+			System.err.println("Erro ao cadastrar produto: " + e.getMessage());
 		}
-
-		produtos.add(produto);
-		System.out.println("Produto cadastrado com sucesso!");
 	}
 
 	@Override
 	public List<Produto> listar() {
 		if (produtos.isEmpty()) {
-			System.err.println("Não há produtos cadastrados.");
+			System.out.println("Não há produtos cadastrados.");
 		}
 		return produtos;
 	}

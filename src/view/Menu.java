@@ -1,7 +1,6 @@
 package view;
 
 import controller.ProdutoControllerImple;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -11,16 +10,7 @@ public class Menu {
 			int opcao = 0;
 
 			do {
-				System.out.println("=====================================================");
-				System.out.println("           🛒 ** E-COMMERCE DO DESESPERO ** 🛒");
-				System.out.println("=====================================================");
-				System.out.println("1. Cadastrar Produto");
-				System.out.println("2. Listar Produtos");
-				System.out.println("3. Procurar Produto");
-				System.out.println("4. Atualizar Produto");
-				System.out.println("5. ❌ Sair");
-				System.out.println("=====================================================");
-
+				exibirMenu();
 				System.out.print("Escolha uma opção: ");
 				opcao = scanner.nextInt();
 
@@ -37,16 +27,26 @@ public class Menu {
 				case 4:
 					controller.atualizarProduto();
 					break;
-
 				case 5:
 					System.out.println("Saindo do programa, bye...");
-					scanner.close();
-					return;
+					break;
 				default:
 					System.out.println("Opção inválida. Tente novamente.");
 				}
 
-			} while (opcao != 8);
+			} while (opcao != 5);
 		}
+	}
+
+	private static void exibirMenu() {
+		System.out.println("=====================================================");
+		System.out.println("           🛒 ** E-COMMERCE DO DESESPERO ** 🛒  ");
+		System.out.println("=====================================================");
+		System.out.println("1. Cadastrar Produto");
+		System.out.println("2. Listar Produtos");
+		System.out.println("3. Procurar Produto");
+		System.out.println("4. Atualizar Produto");
+		System.out.println("5. ❌ Sair");
+		System.out.println("=====================================================");
 	}
 }
