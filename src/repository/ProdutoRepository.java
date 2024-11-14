@@ -4,19 +4,17 @@ import model.Produto;
 import java.util.List;
 
 public interface ProdutoRepository {
-	Produto procurarPorId(int id);
+	void cadastrar(Produto produto);
 
 	List<Produto> listarTodos();
 
-	void cadastrar(Produto produto);
+	Produto procurarPorId(int id);
 
 	void atualizar(Produto produto);
 
-	void deletar(int id);
+	boolean comprarProduto(int id, int quantidade);
 
 	void adicionarEstoque(int id, int quantidade);
 
 	void removerEstoque(int id, int quantidade);
-
-	boolean comprarProduto(int id, int quantidade);
 }
