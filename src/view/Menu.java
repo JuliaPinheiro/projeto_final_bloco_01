@@ -9,7 +9,7 @@ public class Menu {
 
 		do {
 			System.out.println("=======================================");
-			System.out.println("     🛍️  E-commerce da Renner 🛍️      ");
+			System.out.println("     🛍️  E-commerce da Julia   🛍️      ");
 			System.out.println("=======================================");
 			System.out.println("1️  - Adicionar produto");
 			System.out.println("2️  - Listar produtos");
